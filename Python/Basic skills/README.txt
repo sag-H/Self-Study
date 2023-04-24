@@ -1,0 +1,1 @@
+Most of the exercises in this folder are taken from the python_book.pdf file that's in this.
