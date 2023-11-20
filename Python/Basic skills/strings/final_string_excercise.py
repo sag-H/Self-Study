@@ -1,5 +1,4 @@
 def print_num(num):
-#It just prints the fucking num.
     print(f"Your num: {num}")
 
 def print_digits(num):
