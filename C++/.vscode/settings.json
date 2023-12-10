@@ -55,6 +55,7 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "array": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "stdio.h": "c"
     }
 }

@@ -3,27 +3,22 @@
 
 using namespace std;
 
-void displayMin(vector <int> vec);
-void displayMax(vector <int> vec);
-void displayMean(vector <int> vec);
-void displayList(vector <int> vec);
+void displayMenu();
+char getInput();
+void displayMin(const vector <int> vec);
+void displayMax(const vector <int> vec);
+void displayMean(const vector <int> vec);
+void displayList(const vector <int> vec);
 void addNumber(vector <int> &vec);
 
 int main(){
 
     vector <int> vec {};
-    char selection{};
+    char selection;
 
     do{
-        cout << '\n';
-        cout << "P - Print numbers\n";
-        cout << "A - Add a number\n"; 
-        cout << "M - Display mean of the numbers\n"; 
-        cout << "S - Display the smallest number\n"; 
-        cout << "L - Display the largest number\n";
-        cout << "Q - Quit\n\n";
-        cout << "Enter your choice: "; 
-        cin >> selection;
+        displayMenu();
+        selection = getInput();
 
         switch (selection){
             case 'p':
@@ -48,6 +43,24 @@ int main(){
         } 
     } while(selection != 'q' && selection != 'Q');
 }
+
+void displayMenu(){
+    cout << '\n';
+    cout << "P - Print numbers\n";
+    cout << "A - Add a number\n"; 
+    cout << "M - Display mean of the numbers\n"; 
+    cout << "S - Display the smallest number\n"; 
+    cout << "L - Display the largest number\n";
+    cout << "Q - Quit\n\n";
+}
+
+char getInput(){
+
+    char selection;
+    cout << "Enter your choice: "; 
+    cin >> selection;
+    return selection;
+}   
 
 void displayMin (vector <int> vec){
     
@@ -93,7 +106,7 @@ void displayMean (vector <int> vec){
 
     for(int i {0}; i < len; i++) sum += vec.at(i);
 
-    cout << sum / len << '\n';
+    cout << "The mean is " << sum / len << '\n';
 }
 
 void displayList(vector <int> vec){
